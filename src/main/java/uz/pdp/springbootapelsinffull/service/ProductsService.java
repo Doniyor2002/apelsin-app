@@ -37,10 +37,7 @@ public class ProductsService {
         productRepository.save(product);
         model.addAttribute("list",productRepository.findAll());
     }
-
     public void updateproduct(Integer id, ProductDto productDto, Model model) {
-
-
         Optional<Product> optionalProduct = productRepository.findById(id);
         if (optionalProduct.isPresent()) {
             Product product = optionalProduct.get();
